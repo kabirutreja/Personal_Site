@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kabir - Personal website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@400;600;700;&
+display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --bg: #08081f;
+            --bg-soft: rgb(18, 18, 62);
+            --card: rgba(255,255,255,0.04);
+            --card-border: rgba(255,255,255,0.08);
+            --purple: rgb(170, 107, 226);
+            --purple-glow: rgba(170, 107, 226, 0.45);
+            --pink: #ff8fd6;
+            --text-dim: rgba(255,255,255,0.65);
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            scroll-behavior: smooth;
+        }
+body{
+     background-color: var(--bg);
+            background-image:
+                radial-gradient(600px circle at 85% 15%, rgba(170,107,226,0.20), transparent 60%),
+                radial-gradient(500px circle at 10% 80%, rgba(255,143,214,0.10), transparent 55%);
+            background-attachment: fixed;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+}
+section{
+            padding: 100px 6%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .eyebrow-title{
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .section-lede{
+            color: var(--text-dim);
+            max-width: 60ch;
+            margin-bottom: 50px;
+            line-height: 1.6;
+        }
+nav{
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     height: 76px;
+     padding: 0 6%;
+     background-color: rgb(18, 18, 62, 0.55);
+     backdrop-filter: blur(14px);
+     -webkit-backdrop-filter: blur(14px);
+     border-bottom: 1px solid rgb(255, 255, 255, 0.06);
+     position: sticky;
+     top: 0;
+     z-index: 100;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+nav ul li{
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 999px;
+            transition: color 0.25s ease, background 0.25s ease;
+}
+
+nav ul li a:hover{
+    
+    color: rgb(153, 153, 226);
+    font-size: 1.02rem;
+    background: rgb(170, 107, 226, 0.18);
+}
+.left{
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.firstSection{
+     display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            min-height: calc(100vh - 76px);
+            padding: 60px 6%;
+            gap: 40px;
+            max-width: none;
+
+}
+.firstSection > div{
+    width: 42%;
+    min-width: 280px;
+
+}
+
+.leftSection{
+    
+    font-size: 2.6rem;
+            font-weight: 600;
+            line-height: 1.25;
+}
+.leftSection .greeting{
+            font-weight: 400;
+            color: var(--text-dim);
+            font-size: 1.6rem;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .leftSection .name{
+            font-weight: 700;
+        }
+        #typed-element{
+            font-weight: 800;
+            font-size: 1.05em;
+        }
+        .typed-cursor{
+            color: var(--purple);
+        }
+        .subtext{
+            margin-top: 22px;
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-dim);
+            max-width: 34ch;
+            line-height: 1.6;
+        }
+        .cta{
+            display: inline-block;
+            margin-top: 30px;
+            padding: 13px 30px;
+            border-radius: 999px;
+            background: var(--purple);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+        .cta:hover{
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px var(--purple-glow);
+        }
+        .rightSection{
+            display: flex;
+            justify-content: center;
+        }
+        .rightSection .art-wrap{
+            position: relative;
+            width: 80%;
+        }
+        .rightSection .art-wrap::before{
+            content: "";
+            position: absolute;
+            inset: 8%;
+            background: radial-gradient(circle, var(--purple-glow), transparent 70%);
+            filter: blur(20px);
+            z-index: 0;
+        }
+        .rightSection img{
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            animation: float 4.5s ease-in-out infinite;
+            border-radius: 16px;
+        }
+        @keyframes float{
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-16px); }
+        }
+        .purple{ color: var(--purple); }
+         .placeholder{
+            border: 1.5px dashed rgba(170,107,226,0.5);
+            border-radius: 14px;
+            background: rgba(170,107,226,0.06);
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .reveal{
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.visible{
+            opacity: 1;
+            transform: translateY(0);
+        }
+         
+        .about-wrap{
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        .about-photo{
+            width: 260px;
+            height: 260px;
+            border-radius: 28px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        .about-photo img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 28px;
+        }
+        .about-photo.placeholder{ height: 260px; padding: 20px; }
+        .about-text{
+            flex: 1;
+            min-width: 280px;
+            color: var(--text-dim);
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        
+        .hobby-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+        }
+        .hobby-card{
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 30px 26px;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hobby-card:hover{
+            transform: translateY(-6px);
+            border-color: rgba(170,107,226,0.4);
+            box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+        }
+        .hobby-icon{
+            font-size: 1.8rem;
+            margin-bottom: 14px;
+            display: inline-block;
+        }
+        .hobby-card h3{
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+        .hobby-card p{
+            color: var(--text-dim);
+            font-size: 0.92rem;
+            line-height: 1.55;
+        }
+        .find-card{
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(170,107,226,0.12), rgba(255,143,214,0.08));
+            border: 1px dashed rgba(170,107,226,0.4);
+        }
+        .find-card code{
+            background: rgba(255,255,255,0.08);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+         
+        .work-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
+        .work-card{
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .work-card:hover{
+            transform: translateY(-6px);
+            box-shadow: 0 16px 34px rgba(0,0,0,0.4);
+        }
+        .work-thumb{
+            width: 100%;
+            height: 170px;
+        }
+        .work-thumb img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .work-thumb.placeholder{ height: 170px; }
+        .work-body{
+            padding: 20px 22px 24px;
+        }
+        .work-body h3{
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        .work-body p{
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            line-height: 1.55;
+            margin-bottom: 14px;
+        }
+        .work-link{
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--purple);
+            text-decoration: none;
+        }
+        .work-link:hover{ text-decoration: underline; }
+        .work-more{
+            grid-column: 1 / -1;
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            padding: 20px;
+        }
+
+        /* CONTACT */
+        .contact-wrap{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .contact-card{
+            flex: 1;
+            min-width: 220px;
+            background: var(--card);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 28px;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .contact-card:hover{
+            transform: translateY(-6px);
+            border-color: rgba(170,107,226,0.5);
+        }
+        .contact-icon{ font-size: 1.6rem; }
+        .contact-card .label{
+            color: var(--text-dim);
+            font-size: 0.82rem;
+        }
+        .contact-card .value{
+            font-weight: 600;
+            font-size: 1rem;
+            word-break: break-word;
+        }
+
+        footer{
+            text-align: center;
+            padding: 40px 6% 60px;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        @media (prefers-reduced-motion: reduce){
+            .rightSection img{ animation: none; }
+            .reveal{ opacity: 1; transform: none; transition: none; }
+        }
+
+        @media (max-width: 800px){
+            .firstSection{ flex-direction: column-reverse; text-align: center; }
+            .firstSection > div{ width: 100%; }
+            .subtext{ margin-left: auto; margin-right: auto; }
+            nav{ padding: 0 4%; }
+            nav ul{ gap: 0; }
+            nav ul li a{ padding: 8px 10px; font-size: 0.82rem; }
+            .about-wrap{ flex-direction: column; text-align: center; }
+            .about-photo{ margin: 0 auto; }
+            section{ padding: 70px 6%; }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">Kabir's Website</div>
+            <div class="right">
+                <ul>
+                     <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#hobbies">Hobbies</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                hi, I'm <span class="purple">Kabir</span>
+                <div>and I'm a passionate</div>
+                <div>human &</div>
+                <h2><span id="typed-element"></span></h2>
+            </div>
+            <div class="rightSection">
+                <img src="man.png" alt="">
+            </div>
+
+        </section>
+    </main>
+    
+    
+        <section class="firstSection" id="home">
+            <div class="leftSection">
+                <span class="greeting">hi, I'm</span>
+                <span class="name purple">Kabir</span>
+                <div>and I'm a jack of all trades</div>
+                <h2><span id="typed-element"></span></h2>
+                <p class="subtext">I build things, and occasionally lift heavy things. Welcome to my corner of the internet.</p>
+                <button class="cta" onclick="document.getElementById('work').scrollIntoView()">See my work</button>
+            </div>
+            <div class="rightSection">
+                <div class="art-wrap">
+                    <img src="ill.png" alt="Illustration of Kabir">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="reveal">
+    <h2 class="eyebrow-title">About me</h2>
+    <div class="about-wrap">
+        <div class="about-photo"><img src="me.png" alt="Kabir"></div>
+        <div class="about-text">
+            I have the general appearance of a guy who either knows exactly what he's
+            doing or has absolutely no idea what he's doing. Personality wise imagine giving
+            an overthinking person unlimited internet access and unlimited hobbies so yeah,
+            Physically: decent Mentally: still loading Aesthetically: unnecessarily committed.
+            Overall: premium packaging, questionable software.
+        </div>
+    </div>
+</section>
+
+        
+        <section id="hobbies" class="reveal">
+            <h2 class="eyebrow-title">Things I love</h2>
+            <p class="section-lede">A few things that take up most of my free time, and some of my headspace.</p>
+            <div class="hobby-grid">
+                <div class="hobby-card">
+                    <span class="hobby-icon">🎮</span>
+                    <h3>Game Development</h3>
+                    
+                    <p>Building small games from scratch, figuring out mechanics, breaking my own code, then fixing it .</p>
+                </div>
+                <div class="hobby-card">
+                    <span class="hobby-icon">🏋️</span>
+                    <h3>Powerlifting</h3>
+                    <p>Chasing personal records one plate at a time. Squat, bench, deadlift.</p>
+                </div>
+                <div class="hobby-card">
+                    <span class="hobby-icon">🎶</span>
+                    <h3>Flute</h3>
+                    <p>Learning to make something calm out of a piece of wood and a lot of air.</p>
+                </div>
+                <div class="hobby-card">
+                    <span class="hobby-icon">🔧</span>
+                    <h3>DIY & Making Things</h3>
+                    <p>If it can be built, modified, or taken apart to see how it works...I'm probably doing that this weekend.</p>
+                </div>
+                <div class="hobby-card">
+                    <span class="hobby-icon">✨</span>
+                    <h3>Trying New Things</h3>
+                    <p>New hobby, new food, new city, I'd rather be mildly bad at something new than comfortable doing the same thing.</p>
+                </div>
+                
+          <!--  <div class="hobby-card find-card">
+                    <span class="hobby-icon">🌐</span>
+                    <h3>Found on the internet</h3>
+                    <p>✍️  something cool tool, an article, a video, a website.link
+                        .</p>
+                </div> -->
+            </div>
+        </section>
+
+       
+        <section id="work" class="reveal">
+    <h2 class="eyebrow-title">My work</h2>
+    <p class="section-lede">Game projects I've built so far. More coming soon.</p>
+    <div class="work-grid">
+
+        <div class="work-card">
+            <div class="work-thumb"><img src="rps.png" alt="Rock-Paper-Scissor"></div>
+            <div class="work-body">
+                <h3>Rock-Paper-Scissor</h3>
+                <p>A first-person action game where you defeat enemies in fast-paced Rock-Paper-Scissors combat, smash respawning boxes, and rack up your score.</p>
+                <a href="https://kabirutreja.itch.io/rock-paper-scissor" target="_blank" rel="noopener" class="work-link">View project →</a>
+            </div>
+        </div>
+
+        <div class="work-card">
+            <div class="work-thumb"><img src="glow.png" alt="Trust No One"></div>
+            <div class="work-body">
+                <h3>Trust No One</h3>
+                <p>An AI opponent that lies to your face, and gets better at lying the longer you survive.</p>
+                <a href="https://kabirutreja.itch.io/trust-no-one" target="_blank" rel="noopener" class="work-link">View project →</a>
+            </div>
+        </div>
+
+        <p class="work-more">more projects coming soon 🚧</p>
+    </div>
+</section>
+
+       
+        <section id="contact" class="reveal">
+            <h2 class="eyebrow-title">Get in touch</h2>
+            <p class="section-lede">Say hi, collaborate on a project, or just talk games.</p>
+            <div class="contact-wrap">
+                
+                <a href="mailto:utrejakabir.com" class="contact-card">
+                    <span class="contact-icon">✉️</span>
+                    <span class="label">Email</span>
+                    <span class="value">utrejakabir@gmail.com</span>
+                </a>
+                
+                <a href="https://instagram.com/kabir_utreja" target="_blank" rel="noopener" class="contact-card">
+                    <span class="contact-icon">📷</span>
+                    <span class="label">Instagram</span>
+                    <span class="value">@kabir_utreja</span>
+                </a>
+            </div>
+        </section>
+
+        <footer>© 2026 Kabir. Built with a lot of coffee & mind(a lil).</footer>
+    </main>
+
+    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#typed-element', {
+            strings: ['Entrepreneur.', 'Game Dev.', 'Powerlifter.', 'Creator.'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true
+        });
+
+        
+        const revealEls = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        revealEls.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
