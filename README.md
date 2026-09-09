@@ -40,8 +40,6 @@ Simplest — just open the file: Double click index.html and it'll open in your 
 # Used Links
 https://readme.so/ - for writing readme
 
-https://chatgpt.com/ - not for coding but for image generation used on web
-
 https://www.remove.bg/ - for making bg free pic
 
 https://github.com/mattboldt/typed.js/ - for typing animation
